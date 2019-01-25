@@ -44,4 +44,4 @@ lint-brigade:
 run-brigade:
 	echo '{"name": "$(ENV_NAME)"}' > payload.json
 	brig run -c $(TAG) -r $(REF) -f brigade.js -p payload.json \
-	kooba/ditc-products --kube-context $(CONTEXT) --namespace brigade
+	kooba/ditc-gateway --kube-context $(CONTEXT) --namespace brigade

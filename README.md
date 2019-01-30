@@ -1,3 +1,1 @@
 # ditc-gateway
-
-demo release

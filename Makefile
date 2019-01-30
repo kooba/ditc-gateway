@@ -21,16 +21,19 @@ push-image:
 
 build: run-wheel-builder build-image push-image
 
-release:
-	git add .
-	git commit -m "Gateway Release $$(date)"
-	git push origin service-impl
-	$(MAKE) build
+retag:
 	curl -XDELETE -H "Authorization: token $(GITHUB_TOKEN)" \
 	"https://api.github.com/repos/kooba/ditc-gateway/git/refs/tags/dev"
 	curl -XPOST -H "Authorization: token $(GITHUB_TOKEN)" \
 	"https://api.github.com/repos/kooba/ditc-gateway/git/refs" \
 	-d '{ "sha": "$(TAG)", "ref": "refs/tags/dev" }'
+
+release:
+	git add .
+	git commit -m "Gateway Release $$(date)"
+	git push origin service-impl
+	$(MAKE) build
+	$(MAKE) retag
 
 # Kubernetes
 

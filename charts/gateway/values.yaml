@@ -1,0 +1,6 @@
+replicaCount: 1
+image:
+  tag: latest
+  name: jakubborys/ditc-gateway
+ingressPort: 80
+servicePort: 8000

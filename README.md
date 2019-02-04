@@ -3,7 +3,7 @@ Gateway repository for [Development In The Cloud](https://medium.com/@JakubBorys
 
 This is a part of 4 repo setup:
 
-Config : https://github.com/kooba/ditc-gateway  
+Config : https://github.com/kooba/ditc-config  
 Gateway (This one): https://github.com/kooba/ditc-gateway  
 Orders: https://github.com/kooba/ditc-orders  
 Products: https://github.com/kooba/ditc-products  
